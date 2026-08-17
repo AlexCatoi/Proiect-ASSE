@@ -1,0 +1,178 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\EntityFramework.6.5.1\build\EntityFramework.props" Condition="Exists('..\packages\EntityFramework.6.5.1\build\EntityFramework.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{730BCB82-F028-4638-890E-D1CDD5DC0936}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>ProiectASSE</RootNamespace>
+    <AssemblyName>ProiectASSE</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>ExtendedDesignGuidelineRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Castle.Core, Version=5.0.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
+      <HintPath>..\packages\Castle.Core.5.1.1\lib\net462\Castle.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.5.1\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.5.1\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="FluentValidation, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7de548da2fbae0f0, processorArchitecture=MSIL">
+      <HintPath>..\packages\FluentValidation.10.3.6\lib\netstandard2.0\FluentValidation.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net, Version=3.2.0.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <HintPath>..\packages\log4net.3.2.0\lib\net462\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="Moq, Version=4.20.72.0, Culture=neutral, PublicKeyToken=69f491c39445e920, processorArchitecture=MSIL">
+      <HintPath>..\packages\Moq.4.20.72\lib\net462\Moq.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=4.0.4.1, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.4.5.3\lib\net461\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Threading.Tasks.Extensions.4.5.4\lib\net461\System.Threading.Tasks.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DataAccess\Context\LibraryContext.cs" />
+    <Compile Include="DataAccess\Repositories\AuthorRepository.cs" />
+    <Compile Include="DataAccess\Repositories\BookCopyRepository.cs" />
+    <Compile Include="DataAccess\Repositories\BookRepository.cs" />
+    <Compile Include="DataAccess\Repositories\CategoryRepository.cs" />
+    <Compile Include="DataAccess\Repositories\EditionRepository.cs" />
+    <Compile Include="DataAccess\Repositories\EmployeeRepository.cs" />
+    <Compile Include="DataAccess\Repositories\ReaderRepository.cs" />
+    <Compile Include="DataAccess\Repositories\RentRepository.cs" />
+    <Compile Include="DataAccess\RepositoryInterfaces\IAuthorRepository.cs" />
+    <Compile Include="DataAccess\RepositoryInterfaces\IBookCopyRepository.cs" />
+    <Compile Include="DataAccess\RepositoryInterfaces\IBookRepository.cs" />
+    <Compile Include="DataAccess\RepositoryInterfaces\ICategoryRepository.cs" />
+    <Compile Include="DataAccess\RepositoryInterfaces\IEditionRepository.cs" />
+    <Compile Include="DataAccess\RepositoryInterfaces\IEmployeeRepository.cs" />
+    <Compile Include="DataAccess\RepositoryInterfaces\IReaderRepository.cs" />
+    <Compile Include="DataAccess\RepositoryInterfaces\IRentRepository.cs" />
+    <Compile Include="DomainModel\Entities\Author.cs" />
+    <Compile Include="DomainModel\Entities\Book.cs" />
+    <Compile Include="DomainModel\Entities\BookCopy.cs" />
+    <Compile Include="DomainModel\Entities\Category.cs" />
+    <Compile Include="DomainModel\Entities\Edition.cs" />
+    <Compile Include="DomainModel\Entities\Employee.cs" />
+    <Compile Include="DomainModel\Entities\Reader.cs" />
+    <Compile Include="DomainModel\Entities\Rent.cs" />
+    <Compile Include="Migrations\202601031133240_InitialMigration.cs" />
+    <Compile Include="Migrations\202601031133240_InitialMigration.Designer.cs">
+      <DependentUpon>202601031133240_InitialMigration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202601031145220_Second.cs" />
+    <Compile Include="Migrations\202601031145220_Second.Designer.cs">
+      <DependentUpon>202601031145220_Second.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202601031149443_Third.cs" />
+    <Compile Include="Migrations\202601031149443_Third.Designer.cs">
+      <DependentUpon>202601031149443_Third.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\Author\AuthorService.cs" />
+    <Compile Include="Services\Author\AuthorValidator.cs" />
+    <Compile Include="Services\Author\IAuthorService.cs" />
+    <Compile Include="Services\BookCopy\BookCopyService.cs" />
+    <Compile Include="Services\BookCopy\BookCopyValidator.cs" />
+    <Compile Include="Services\BookCopy\IBookCopyService.cs" />
+    <Compile Include="Services\BookService\BookService.cs" />
+    <Compile Include="Services\BookService\BookValidator.cs" />
+    <Compile Include="Services\BookService\IBookService.cs" />
+    <Compile Include="Services\CategoryService\CategoryService.cs" />
+    <Compile Include="Services\CategoryService\CategoryValidator.cs" />
+    <Compile Include="Services\CategoryService\ICategoryService.cs" />
+    <Compile Include="Services\Edition\EditionService.cs" />
+    <Compile Include="Services\Edition\EditionValidator.cs" />
+    <Compile Include="Services\Edition\IEditionService.cs" />
+    <Compile Include="Services\EmployeeService\EmployeeService.cs" />
+    <Compile Include="Services\EmployeeService\EmployeeValidator.cs" />
+    <Compile Include="Services\EmployeeService\IEmployeeService.cs" />
+    <Compile Include="Services\ReaderService\IReaderService.cs" />
+    <Compile Include="Services\ReaderService\ReaderService.cs" />
+    <Compile Include="Services\ReaderService\ReaderValidator.cs" />
+    <Compile Include="Services\Rent\IRentHistoryService.cs" />
+    <Compile Include="Services\Rent\IRentRulesService.cs" />
+    <Compile Include="Services\Rent\IRentService.cs" />
+    <Compile Include="Services\Rent\IRentLimitService.cs" />
+    <Compile Include="Services\Rent\RentHistoryService.cs" />
+    <Compile Include="Services\Rent\RentLimitService.cs" />
+    <Compile Include="Services\Rent\RentRulesService.cs" />
+    <Compile Include="Services\Rent\RentService.cs" />
+    <Compile Include="Services\Rent\RentValidator.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+    <AdditionalFiles Include="stylecop.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\202601031133240_InitialMigration.resx">
+      <DependentUpon>202601031133240_InitialMigration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202601031145220_Second.resx">
+      <DependentUpon>202601031145220_Second.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202601031149443_Third.resx">
+      <DependentUpon>202601031149443_Third.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Analyzer Include="..\packages\StyleCop.Analyzers.1.1.118\analyzers\dotnet\cs\StyleCop.Analyzers.CodeFixes.dll" />
+    <Analyzer Include="..\packages\StyleCop.Analyzers.1.1.118\analyzers\dotnet\cs\StyleCop.Analyzers.dll" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\EntityFramework.6.5.1\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.5.1\build\EntityFramework.props'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.5.1\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.5.1\build\EntityFramework.targets'))" />
+  </Target>
+  <Import Project="..\packages\EntityFramework.6.5.1\build\EntityFramework.targets" Condition="Exists('..\packages\EntityFramework.6.5.1\build\EntityFramework.targets')" />
+</Project>
